@@ -12,6 +12,18 @@ _For more information see the [TC39 proposal process](https://tc39.github.io/pro
 
 * Halasi Tamás ([@trustedtomato][Tomato])
 
+## Some examples which regularly come up
+```javascript
+[1,2,3,4,5,6,7,8,9].map(#1+?); // partially apply an operator
+//=> [2,3,4,5,6,7,8,9,10]
+
+[1,2,3,4,5,6,7,8,9].reduce(#?+?); // use an operator as a function
+//=> 45
+
+['cat', 'coconut', 'carrot', 'dog', 'sun'].filter(#?.startsWith('c')); // partially apply a function/method
+//=> ['cat', 'coconut', 'carrot'] 
+```
+
 # Proposal
 ## `#` and `?`
 The `#` operator (precedence: 4.5) makes the affected expression a function. All upcoming tokens are only interpreted in this expression.
@@ -62,19 +74,6 @@ When nesting partial expressions, the `??` refers to an argument from the partia
 ```javascript
 const waitEvent = #new Promise(#??.addEventListener(??, ?));
 // const waitEvent = (x,y) => new Promise(z => x.addEventListener(y,z));
-```
-
-
-## Some examples which regularly come up
-```javascript
-[1,2,3,4,5,6,7,8,9].map(#1+?); // partially apply an operator
-//=> [2,3,4,5,6,7,8,9,10]
-
-[1,2,3,4,5,6,7,8,9].reduce(#?+?); // use an operator as a function
-//=> 45
-
-['cat', 'coconut', 'carrot', 'dog', 'sun'].filter(#?.startsWith('c')); // partially apply a function/method
-//=> ['cat', 'coconut', 'carrot'] 
 ```
 
 # Parsing
