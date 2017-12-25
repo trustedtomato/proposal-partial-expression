@@ -4,7 +4,7 @@ This proposal introduces a new syntax using the `#`, `?` (any number of ?s after
 ## Status
 
 **Stage:** 0  
-**Champion:** Halasi Tamás ([@trustedtomato][Tomato])
+**Champion:** [#1](https://github.com/trustedtomato/proposal-partial-expression/issues/1)
 
 _For more information see the [TC39 proposal process](https://tc39.github.io/process-document/)._
 
