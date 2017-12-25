@@ -6,6 +6,8 @@ This proposal introduces a new syntax using the `#`, `?` (any number of ?s after
 **Stage:** 0  
 **Champion:** [#1](https://github.com/trustedtomato/proposal-partial-expression/issues/1)
 
+This proposal is stage 0 and as such is open to significant revision. Any and all feedback and ideas are greatly appreciated. Use the issues to post questions/ideas and send pull requests for any content updates. Fixes, clarifications, and especially usage examples are definitely helpful.
+
 _For more information see the [TC39 proposal process](https://tc39.github.io/process-document/)._
 
 ## Authors
