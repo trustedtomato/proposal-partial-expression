@@ -3,7 +3,7 @@ This proposal introduces a new syntax using the `#`, `?` (any number of ?s after
 
 ## Status
 
-**Stage:** [#1](https://github.com/trustedtomato/proposal-partial-expression/issues/1)
+**Stage:** [#1](https://github.com/trustedtomato/proposal-partial-expression/issues/1)  
 **Champion:** [#1](https://github.com/trustedtomato/proposal-partial-expression/issues/1)
 
 Any and all feedback and ideas are greatly appreciated. Use the issues to post questions/ideas and send pull requests for any content updates. Fixes, clarifications, and especially usage examples are definitely helpful.
