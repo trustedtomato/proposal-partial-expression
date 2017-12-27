@@ -78,8 +78,17 @@ const waitEvent = #new Promise(#??.addEventListener(??, ?));
 // const waitEvent = (x,y) => new Promise(z => x.addEventListener(y,z));
 ```
 
+
 # Parsing
+
+Conditional expressions:  
 The `?` token is used in conditional expressions, but its not ambigous, because in this proposal, a `?` cannot follow an expression, while in a conditional expression it always does. (e.g. f(a? is definitely a conditional while f(? is definitely a placeholder).
+
+[Optional chaining](https://github.com/TC39/proposal-optional-chaining):  
+The operator `?.` must appear directly after an expression, while the `?` variable/parameter can't.
+
+[Nullish coalescing](https://github.com/tc39/proposal-nullish-coalescing):  
+The operator `??` must appear directly after an expression, while the `??` variable/parameter can't.
 
 # TODO
 
