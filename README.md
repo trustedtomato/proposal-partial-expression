@@ -28,7 +28,7 @@ _For more information see the [TC39 proposal process](https://tc39.github.io/pro
 
 # Proposal
 ## `#` and `?`
-The `#` operator (precedence: 4.5) makes the affected expression a function. All upcoming tokens are only interpreted in this expression.
+The `#` operator (precedence: [4.5](https://developer.mozilla.org/hu/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)) makes the affected expression a function. All upcoming tokens are only interpreted in this expression.
 
 The `?` is a variable which will have the value of the corresponding argument. The first one stands for the first argument, the second for the second, etc. The order is determined by the order of their appearance in the code.
 
