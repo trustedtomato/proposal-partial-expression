@@ -50,7 +50,7 @@ const maxWithTheMinOf0 = #Math.max(0, ?, ...?r, ?);
 ```
 
 
-## `?x` (`?1, ?2, ?3`)
+## `?x` (`?0, ?1, ?2`)
 The number specifies the ordinal position of the parameter. They allow the usage of an argument more than once & swap their order. Numbering starts from 0. The unnumbered `?`s fill out the left out parameters from left to right.
 
 ```javascript
