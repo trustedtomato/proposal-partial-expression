@@ -76,8 +76,6 @@ The `?` token is used in conditional expressions, but its not ambigous, because 
 [Optional chaining](https://github.com/TC39/proposal-optional-chaining):  
 The operator `?.` must appear directly after an expression, while the `?` variable/parameter can't.
 
-[Nullish coalescing](https://github.com/tc39/proposal-nullish-coalescing):  
-The operator `??` must appear directly after an expression, while the `??` variable/parameter can't.
 
 # TODO
 
