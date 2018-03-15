@@ -68,17 +68,6 @@ const foo = #bar(?1,?2,?,?1,?,?4,...?r,?);
 ```
 
 
-## `??`, `???`, `????`, etc.
-When nesting partial expressions, the `??` refers to an argument from the partial expression one higher, `???` referers to one two higher, etc.
-
-**NOTE:** Otherwise they behave like a regular `?`, so they can be numbered, and `??r`s can be used, too.
-
-```javascript
-const waitEvent = #new Promise(#??.addEventListener(??, ?));
-// const waitEvent = (x,y) => new Promise(z => x.addEventListener(y,z));
-```
-
-
 # Parsing
 
 Conditional expressions:  
