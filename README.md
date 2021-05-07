@@ -28,7 +28,7 @@ _For more information see the [TC39 proposal process](https://tc39.github.io/pro
 
 # Proposal
 ## `#` and `?`
-The `#` operator (precedence: [4.5](https://developer.mozilla.org/hu/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)) makes the affected expression a function. All upcoming tokens are only interpreted in this expression.
+The `#` operator (precedence: [3.5](https://developer.mozilla.org/hu/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)) makes the affected expression a function. All upcoming tokens are only interpreted in this expression.
 
 The `?` is a variable which will have the value of the corresponding argument. The first one stands for the first argument, the second for the second, etc. The order is determined by the order of their appearance in the code.
 
@@ -39,16 +39,6 @@ const add = #?+?;
 const addOne = #1+?;
 // const addOne = (x) => 1+x;
 ```
-
-
-## `?r`
-The `?r` is an array of the arguments which were not symbolized by any `?`.
-
-```javascript
-const maxWithTheMinOf0 = #Math.max(0, ?, ...?r, ?);
-// const maxWithTheMinOf0 = (x,y,...zs) => Math.max(x,...zs,y)
-```
-
 
 ## `?x` (`?0, ?1, ?2`)
 The number specifies the ordinal position of the parameter. They allow the usage of an argument more than once & swap their order. Numbering starts from 0. The unnumbered `?`s fill out the left out parameters from left to right.
@@ -67,14 +57,25 @@ const foo = #bar(?1,?2,?,?1,?,?4,...?r,?);
 // const foo = (x0,x1,x2,x3,x4,x5,...xs) => bar(x1,x2,x0,x1,x3,x4,...xs,x5);
 ```
 
+## `?r`
+The `?r` is an array of the arguments after the last used parameter.
+
+```javascript
+const maxWithTheMinOf0 = #Math.max(0, ?, ...?r, ?);
+// const maxWithTheMinOf0 = (x,y,...zs) => Math.max(x,...zs,y)
+
+const foo = #Math.max(0, ?, ...?r, ?2);
+// const maxWithTheMinOf0 = (x,_,y,...zs) => Math.max(x,...zs,y)
+```
+
 
 # Parsing
 
 Conditional expressions:  
-The `?` token is used in conditional expressions, but its not ambigous, because in this proposal, a `?` cannot follow an expression, while in a conditional expression it always does. (e.g. f(a? is definitely a conditional while f(? is definitely a placeholder).
+The `?` token is used in conditional expressions, but its not ambigous, because in this proposal, a `?` cannot follow an expression, while in a conditional expression it always does. (e.g. in `f(a?` the `?` is definitely a conditional operator while in `f(?` it's definitely a placeholder).
 
 [Optional chaining](https://github.com/TC39/proposal-optional-chaining):  
-The operator `?.` must appear directly after an expression, while the `?` variable/parameter can't.
+The operator `?.` must appear directly after an expression, while the `?` variable can't.
 
 
 # TODO
@@ -107,9 +108,9 @@ The following is a high-level list of tasks to progress through each stage of th
 * [ ] The ECMAScript editor has signed off on the [pull request][Ecma262PullRequest].
 
 # Related proposals
-It would plays nicely with the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator).  
+It would play nicely with the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator).  
 Or you might be interested in other partial application proposals:
-- a `.papp` method to functions: [gilbert/es-papp](https://github.com/gilbert/es-papp)
+- a `.papp` method for functions: [gilbert/es-papp](https://github.com/gilbert/es-papp)
 - a proposal very similar to this, but just for functions: [rbuckton/proposal-partial-application](https://github.com/rbuckton/proposal-partial-application)
 
 [Tomato]: https://github.com/trustedtomato
